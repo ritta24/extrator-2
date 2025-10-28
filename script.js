@@ -1,3 +1,4 @@
+import { PALAVRAS_RUINS } from "./palavrasRuins.js"
 const botaoMostraPalavras = document.querySelector("#botao-palavrachave");
 
 botaoMostraPalavras.addEventListener("click", mostraPalavrasChave );
@@ -22,7 +23,6 @@ function mostraPalavrasChave() {
     function ordenaPalavra(p1, p2) {
         return frequencias[p2] - frequencias[p1];
     }
-    console.log(ordenadas);
     return ordenadas.slice(0, 10);
 }
 
@@ -40,8 +40,8 @@ for (let i of palavras) {
 }
 
 function tiraPalavrasRuins(palavras) {
-    const PALAVRAS_RUINS = new set (["para", "uma", "nós"]);
-    const palavrasBoas = [ ];
+
+  const PalavrasBoas = [ ];
     for (let palavra of palavras) {
         if (!PALAVRAS_RUINS.has(palavra) && palavra.length > 2){
             palavrasBoas.push(palavra);
